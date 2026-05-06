@@ -4,7 +4,7 @@ Every DESIGN.md ships with a parallel `design-showcase.html` — a single-file, 
 
 The file lives next to the DESIGN.md (same folder), is self-contained (no fetch, no JS deps beyond Google Fonts via CDN), and is generated alongside the DESIGN.md every time a new one is authored.
 
-The template lives at `templates/showcase.html` and uses Sequora Post Production as a complete worked example. **You don't substitute placeholders — you adapt the working template to the new brand.**
+The template lives at `templates/showcase.html` — a complete working scaffold with neutral placeholder content (a generic "BRAND NAME" with a cyan-blue voltage on a near-black canvas). It renders end-to-end as a generic example so you can verify structure before adapting; your job in Phase 6 is to substitute every BRAND-SPECIFIC marker for the new brand's actual tokens, copy, and assets.
 
 ## What the showcase contains
 
@@ -26,11 +26,11 @@ Nine numbered sections. Some are universal; some are conditional on brand catego
 
 ## How to adapt the template
 
-The template is Sequora Post Production end-to-end. Every place you must change for a new brand is one of these categories:
+Every place you must change for a new brand falls into one of these categories. Search the template for the `BRAND-SPECIFIC` HTML comments — they mark the spots that need substitution.
 
 ### 1) `:root` CSS variables — direct substitution from frontmatter
 
-Every variable in `:root` maps 1:1 to a token in the DESIGN.md frontmatter. Replace the hex values with the new brand's tokens.
+Every variable in `:root` maps 1:1 to a token in the DESIGN.md frontmatter. Replace the placeholder hex values with the new brand's tokens.
 
 | `:root` variable | Frontmatter token | Notes |
 |---|---|---|
@@ -60,12 +60,11 @@ If the brand uses a proprietary font, fall back to the named open-source substit
 
 ### 3) Logo SVG — brand mark
 
-The template has Sequora's hexagonal-S symbol drawn in inline SVG, repeated in:
-- Top nav (small, 28×32px)
-- Hero canvas (large, 140px with cyan glow)
+The template has a placeholder geometric mark (rounded square + concentric circle) drawn in inline SVG, repeated in:
+- Hero canvas (large, 140px with primary glow)
 - Logo lockup section (4 variants: dark / light / mono-white / mono-black)
 
-**If the new brand provides a logo file:** Inline a simplified SVG version. Keep the same five locations and the four-variant lockup.
+**If the new brand provides a logo file:** Inline a simplified SVG version. Keep the same locations and the four-variant lockup.
 
 **If no logo is provided:** Use a wordmark-only lockup (just the brand name in display family). Skip the symbol entirely. Remove the hero canvas symbol or replace with a typographic ornament.
 
@@ -78,7 +77,7 @@ Three places:
 
 ### 5) Section descriptions
 
-Every numbered section has a `.sec-desc` paragraph below the title. Rewrite each in the brand's voice, pulling from the DESIGN.md prose. Don't copy Sequora's wording.
+Every numbered section has a `.sec-desc` paragraph below the title. Rewrite each in the brand's voice, pulling from the DESIGN.md prose. Don't reuse the template's placeholder wording.
 
 ### 6) Color swatches — repeat per token
 
@@ -107,7 +106,7 @@ Group by classifying the token name:
 
 The four-segment bar at the end of section 01 visualizes the brand's color density (typically 60–70% canvas / 20–30% support / 5–10% voltage).
 
-If the DESIGN.md doesn't specify proportions, use sensible defaults: 40% canvas / 25% surface-1 / 25% support / 10% voltage. If the brand explicitly publishes different proportions (Sequora's manual does: 60–70 / 20–30 / 5–10), match them.
+If the DESIGN.md doesn't specify proportions, use sensible defaults: 40% canvas / 25% surface-1 / 25% support / 10% voltage. If the brand explicitly publishes different proportions in its manual, match them.
 
 ### 8) Typography rows
 
@@ -126,13 +125,10 @@ Per row:
 
 The `.t-*` CSS classes are predefined for the standard roles. If the brand uses non-standard roles, add inline styles.
 
-Sample text should reflect the brand voice:
-- Sequora: "Tools built for the timeline"
-- BMW M: "The ultimate"
-- Coffee brand: "Single-origin morning"
+Sample text should reflect the brand voice — pull a real tagline from the brand manual when possible, otherwise write a short headline that demonstrates the family at that size.
 
 For `eyebrow`/`caption-uppercase`, render UPPERCASE.
-For `mono`, use timecode/path/code-style text.
+For `mono`, use timecode/path/code-style text appropriate to the brand's domain.
 
 ### 9) Button variants
 
@@ -141,16 +137,17 @@ Section 03 has six spec-cards: `button-primary`, `button-primary-states`, `butto
 ### 10) Cards (section 05)
 
 Three sub-sections: feature cards, pricing, testimonial.
-- **Feature cards**: 3-up grid. Generate one per brand pillar/value. Sequora has 6 pillars (Precisão, Fluidez, Clareza, Performance, Inteligência, Foco no Editor). Use the brand's actual pillars.
+- **Feature cards**: 3-up grid. Generate one per brand pillar/value (varies per brand — some have 3, some 6+; the grid wraps).
 - **Pricing**: only include if the brand category warrants it (B2B SaaS, products with tiers). For brands without tiered pricing (luxury, editorial, museums), replace with a different card type or remove.
-- **Testimonial**: replace with a brand-appropriate quote. Sequora uses an editor's testimonial. For BMW M, this would be a customer or driver. For a museum brand, a curator. **Never leave Sequora's "Marina Rocha" — that's brand-specific fictional content.**
+- **Testimonial**: replace with a brand-appropriate quote. The placeholder "Author Name / Role · Company" must always be replaced — leaving generic placeholder testimonial copy in a final showcase is a quality-bar failure.
 
 ### 11) Product UI primitives (section 06) — conditional
 
-Sequora is a video-tools company, so it shows: timeline-track, waveform, render-settings panel, inspector. **This entire section is conditional.**
+The template ships with generic dashboard primitives (KPI tiles, recent-activity rows, settings toggles, inspector). **This entire section is conditional on brand category.**
 
-For other brand categories:
-- **Software/tools (Linear, Stripe, Vercel)**: replace with relevant primitives (kanban card, dashboard widget, code editor frame, deploy log).
+For specific categories:
+- **Software/tools (Linear, Stripe, Vercel)**: keep with brand-relevant primitives (kanban card, dashboard widget, code editor frame, deploy log).
+- **Video / audio / creative tools**: timeline track, waveform, render-settings panel, inspector.
 - **Consumer/automotive (BMW M, Tesla)**: replace with brand-relevant primitives (carousel, configurator card, model spec table).
 - **Editorial/lifestyle (NYT, Medium)**: replace with article cards, byline blocks, related-content lists.
 - **Luxury/fashion (Gucci, Prada)**: replace with product card, lookbook frame, atelier story block.
@@ -162,7 +159,7 @@ Pull directly from the DESIGN.md "Do's and Don'ts" prose. Each `<li>` is one rul
 
 ### 13) Footer
 
-Update the brand name and copyright year. Optional: replace the timecode (`01:00:14:23`) with something brand-relevant or remove.
+Update the brand name and copyright year. Optional: replace the version text with something brand-relevant or remove.
 
 ## What to keep verbatim
 
@@ -170,16 +167,15 @@ These parts of the template are universal infrastructure — copy unchanged:
 - All CSS classes and layout (the `:root` block above; the body styles below).
 - Section structure and numbering.
 - The `.swatch`, `.spec-card`, `.type-row`, `.feat-card`, `.price-card`, `.testi-card`, `.elev`, `.rad`, `.sp`, `.dodont` patterns.
-- The procedural waveform script (only relevant for software brands; remove only if section 06 is removed).
 - Responsive breakpoints and media queries.
 
 ## Quality bar for the showcase
 
 The showcase passes if a user opens it and:
-1. Recognizes the brand at first glance — no Sequora colors, fonts, or copy bleeding through.
+1. Recognizes the brand at first glance — no template placeholder copy or colors bleeding through.
 2. Sees every color from the DESIGN.md `colors:` section as a swatch.
 3. Sees every typography role from the DESIGN.md `typography:` section as a row.
-4. Sees the brand's actual Do's and Don'ts (not Sequora's).
+4. Sees the brand's actual Do's and Don'ts (not template placeholders).
 5. Has a brand-appropriate section 06 (or no section 06 if not applicable).
 6. Renders correctly with a double-click — no fetch errors, no missing fonts.
 

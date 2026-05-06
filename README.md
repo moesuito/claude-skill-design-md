@@ -99,8 +99,8 @@ design-md/
 └── templates/
     ├── frontmatter.md                  ← fillable skeleton for frontmatter format
     ├── numbered.md                     ← fillable skeleton for numbered format
-    └── showcase.html                   ← complete worked example showcase
-                                          (Sequora Post Production — adapt per brand)
+    └── showcase.html                   ← generic working scaffold for the showcase
+                                          HTML — adapted per brand in Phase 6
 ```
 
 ## Quality bar
@@ -122,7 +122,7 @@ This skill is built on top of the `DESIGN.md` format and ecosystem:
 - **[awesome-design-md](https://github.com/VoltAgent/awesome-design-md)** — the canonical corpus of `DESIGN.md` files, curated by the [VoltAgent](https://github.com/VoltAgent/voltagent) team. The format conventions, the role-based token naming, the writing-voice patterns, and the section structure all come from that corpus. The live preview gallery at [getdesign.md](https://getdesign.md) is the visual reference for the showcase HTML.
 - **[Google Stitch](https://stitch.withgoogle.com/)** — pioneered the `DESIGN.md` format as a brand-identity artifact LLMs could consume directly.
 
-The included `templates/showcase.html` uses **Sequora Post Production** as a complete worked example (a real brand the author worked with). It's structurally portable to any brand — the skill's Phase 6 documents how to adapt it.
+The included `templates/showcase.html` ships with neutral placeholder content (a generic "BRAND NAME" with a cyan-blue voltage on a near-black canvas) so you can verify structure before adapting it. Phase 6 of the skill walks through how to substitute every BRAND-SPECIFIC marker for a real brand.
 
 ## License
 

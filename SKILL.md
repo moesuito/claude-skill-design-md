@@ -124,9 +124,9 @@ Every DESIGN.md ships with a parallel `design-showcase.html` — a single-file, 
 
 **Always do this immediately after Phase 5.** The showcase is part of the deliverable, not an optional extra.
 
-1. Read `templates/showcase.html` — a complete worked example (Sequora Post Production) demonstrating every section, pattern, and CSS class. The template renders end-to-end as Sequora; your job is to adapt every brand-specific spot to the new brand.
+1. Read `templates/showcase.html` — a complete working scaffold with neutral placeholder content (a generic "BRAND NAME" with a cyan-blue voltage on a near-black canvas). It renders end-to-end so you can verify structure; your job is to substitute every BRAND-SPECIFIC marker for the new brand.
 2. Read `references/showcase-format.md` — the substitution spec. It documents which `:root` variables map to which frontmatter tokens, which sections are universal vs conditional (e.g. section 06 product UI is only for software/tools brands), and how to handle edge cases (light-canvas brands, brands with no logo, brands with > 8 colors).
-3. Adapt the template — **not by replacing `{{placeholders}}` (there are none) but by rewriting Sequora-specific values for the new brand**:
+3. Adapt the template — search for the `BRAND-SPECIFIC` HTML comments and substitute every marked spot:
    - `:root` CSS variables → 1:1 mapping with the brand's frontmatter `colors:`, `rounded:`, `spacing:` tokens
    - Google Fonts URL → rebuilt for the brand's display + body + mono families (with weights from the typography section)
    - Logo SVG → inline SVG of the brand's mark (or wordmark-only if no logo provided)
@@ -140,7 +140,7 @@ Every DESIGN.md ships with a parallel `design-showcase.html` — a single-file, 
 The generated HTML must:
 - Render correctly when opened with a double-click — no `fetch()`, no local server required, no missing fonts.
 - Show every color and typography role from the DESIGN.md.
-- Be unmistakably the new brand at a glance — zero Sequora content bleeding through.
+- Be unmistakably the new brand at a glance — zero template placeholder content bleeding through.
 
 Tell the user both files landed (`DESIGN.md` + `design-showcase.html`) and how to use each: DESIGN.md for AI agents to build UI, the HTML to visualize the system. Mention they can also drag the `DESIGN.md` onto a generic viewer (`design-md-viewer.html` if available, or one served from the user's tooling) — but the brand-specific `design-showcase.html` is the canonical visual artifact.
 
@@ -188,6 +188,6 @@ Read one in your chosen format end-to-end before writing — the voice is contag
 - `references/showcase-format.md` — substitution spec for the showcase HTML template (Phase 6).
 - `templates/frontmatter.md` — fillable skeleton for the frontmatter format.
 - `templates/numbered.md` — fillable skeleton for the numbered format.
-- `templates/showcase.html` — complete worked-example showcase HTML (Sequora Post Production); copied and adapted in Phase 6.
+- `templates/showcase.html` — generic working scaffold for the showcase HTML; adapted in Phase 6 by replacing every BRAND-SPECIFIC marker.
 
 Read the format spec for whichever format you chose, fill the matching template, then in Phase 6 read `references/showcase-format.md` and adapt `templates/showcase.html` for the same brand.

@@ -1,50 +1,65 @@
 <!doctype html>
+<!--
+  ╔═══════════════════════════════════════════════════════════════════════╗
+  ║  DESIGN.md — Showcase HTML Template                                   ║
+  ║                                                                       ║
+  ║  Working scaffold for any brand. Replace every "BRAND-SPECIFIC"       ║
+  ║  marker with values from the new brand's DESIGN.md frontmatter.       ║
+  ║  See references/showcase-format.md for the substitution checklist.    ║
+  ║                                                                       ║
+  ║  This template renders standalone with neutral placeholder content    ║
+  ║  so you can verify the structure before adapting it.                  ║
+  ╚═══════════════════════════════════════════════════════════════════════╝
+-->
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sequora Post Production — Design System</title>
+<title>BRAND NAME — Design System</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- BRAND-SPECIFIC: rebuild Google Fonts URL from brand's typography families & weights -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* =========== BRAND TOKENS (inlined from DESIGN.md) =========== */
+  /* ═══════════ BRAND-SPECIFIC: replace every value below with the brand's ═══════════
+     ═══════════ frontmatter tokens (1:1 mapping with DESIGN.md `colors:`) ═══════════ */
+
   /* Brand voltage */
-  --primary:#1FD3E0;
-  --primary-hover:#43DBE5;
-  --primary-active:#0CA8C0;
-  --primary-disabled:#155F68;
-  --on-primary:#0B0F14;
+  --primary:#6CC7FF;
+  --primary-hover:#88D2FF;
+  --primary-active:#4AB0EC;
+  --primary-disabled:#1F4258;
+  --on-primary:#0C0D10;
 
   /* Text */
-  --ink:#F3F6FA;
-  --ink-muted:#B5C0CC;
-  --ink-subtle:#7C8A99;
-  --ink-tertiary:#5A6675;
+  --ink:#F5F5F7;
+  --ink-muted:#B0B3BD;
+  --ink-subtle:#7A7E8A;
+  --ink-tertiary:#555964;
 
   /* Surface */
-  --canvas:#0B0F14;
-  --surface-1:#151C24;
-  --surface-2:#1B2530;
-  --surface-3:#222D3A;
+  --canvas:#0C0D10;
+  --surface-1:#16181D;
+  --surface-2:#1C1F26;
+  --surface-3:#232730;
 
   /* Borders */
-  --hairline:#1F2A36;
-  --hairline-strong:#2A3744;
+  --hairline:#20232B;
+  --hairline-strong:#2A2E38;
 
   /* Semantic */
-  --success:#2EE0A6;
-  --warning:#F4B942;
-  --error:#FF5A5F;
+  --success:#4ADE80;
+  --warning:#FBBF24;
+  --error:#F87171;
 
   /* Gradient */
-  --gradient-from:#0CA8C0;
-  --gradient-to:#1FD3E0;
+  --gradient-from:#4AB0EC;
+  --gradient-to:#6CC7FF;
 
   /* Inverse */
-  --inverse-canvas:#F3F6FA;
-  --inverse-ink:#0B0F14;
+  --inverse-canvas:#F5F5F7;
+  --inverse-ink:#0C0D10;
 
   /* Radius */
   --r-xs:4px; --r-sm:6px; --r-md:8px; --r-lg:12px; --r-xl:16px; --r-pill:9999px;
@@ -53,7 +68,7 @@
   --xxs:4px; --xs:8px; --sm:12px; --md:16px; --lg:24px; --xl:32px;
   --xxl:48px; --xxxl:64px; --section:96px; --hero:128px;
 
-  /* Families */
+  /* Families — replace with brand's display, body, mono families */
   --display:'Sora',system-ui,sans-serif;
   --body:'Inter',system-ui,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,monospace;
@@ -70,7 +85,6 @@ a{color:inherit;text-decoration:none}
 .section{padding:80px 0;border-top:1px solid var(--hairline)}
 .section:first-of-type{border-top:none}
 
-/* Section heading pattern */
 .sec-num{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-subtle);margin-bottom:18px}
 .sec-title{font-family:var(--display);font-weight:800;font-size:48px;line-height:1.05;letter-spacing:-1px;text-transform:uppercase;margin-bottom:18px}
 .sec-desc{color:var(--ink-muted);font-size:15px;line-height:1.65;max-width:720px;margin-bottom:48px}
@@ -78,7 +92,7 @@ a{color:inherit;text-decoration:none}
 @media (max-width: 700px){ .sec-title{font-size:32px;letter-spacing:-0.6px} }
 
 /* ========= TOP NAV ========= */
-.topnav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(12px);background:rgba(11,15,20,0.85);border-bottom:1px solid var(--hairline)}
+.topnav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(12px);background:rgba(12,13,16,0.85);border-bottom:1px solid var(--hairline)}
 .topnav-inner{display:flex;align-items:center;justify-content:space-between;height:56px;max-width:1280px;margin:0 auto;padding:0 32px}
 .topnav-left{display:flex;align-items:center;gap:24px}
 .brand-name{font-family:var(--display);font-weight:700;font-size:14px;color:var(--ink);letter-spacing:.5px}
@@ -106,7 +120,7 @@ a{color:inherit;text-decoration:none}
 .hero{padding:48px 0 80px}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
 @media (max-width: 1000px){ .hero-grid{grid-template-columns:1fr} }
-.stripes{display:flex;height:3px;border-radius:0;overflow:hidden}
+.stripes{display:flex;height:3px;overflow:hidden}
 .stripes span{flex:1;height:100%}
 .hero .stripes{margin-bottom:28px;max-width:600px}
 .hero h1{font-family:var(--display);font-weight:800;font-size:72px;line-height:1.0;letter-spacing:-2px;text-transform:uppercase}
@@ -116,9 +130,9 @@ a{color:inherit;text-decoration:none}
 .hero-canvas .stripes{position:absolute;left:0;right:0;width:100%;max-width:none}
 .hero-canvas .stripes.top{top:0}
 .hero-canvas .stripes.bottom{bottom:0}
-.hero-canvas .ambient{position:absolute;inset:0;background:radial-gradient(800px 360px at 50% 50%, rgba(31,211,224,0.18), transparent 60%);pointer-events:none}
-.hero-canvas .symbol{position:relative;z-index:2;opacity:.95}
-.hero-canvas .symbol svg{width:140px;height:auto;filter:drop-shadow(0 0 32px rgba(31,211,224,0.45))}
+.hero-canvas .ambient{position:absolute;inset:0;background:radial-gradient(800px 360px at 50% 50%, color-mix(in srgb, var(--primary) 18%, transparent), transparent 60%);pointer-events:none}
+.hero-canvas .symbol{position:relative;z-index:2}
+.hero-canvas .symbol svg{width:140px;height:auto;filter:drop-shadow(0 0 32px color-mix(in srgb, var(--primary) 45%, transparent))}
 @media (max-width: 1100px){ .hero h1{font-size:56px} }
 @media (max-width: 600px){ .hero h1{font-size:38px;letter-spacing:-1px} }
 
@@ -136,15 +150,12 @@ a{color:inherit;text-decoration:none}
 .swatch-meta .hex{font-family:var(--mono);font-size:12px;color:var(--ink-muted);margin-bottom:10px}
 .swatch-meta .role{color:var(--ink-muted);font-size:13px;line-height:1.55}
 
-/* Brand-signature stripe block */
 .signature-stripe{display:flex;height:6px;margin-bottom:18px;overflow:hidden}
 .signature-stripe span{flex:1}
 
-/* Color group spacing */
 .color-group{margin-bottom:48px}
 .color-group:last-child{margin-bottom:0}
 
-/* Usage proportion */
 .proportion{margin-top:48px;background:var(--surface-1);border:1px solid var(--hairline-strong);padding:24px}
 .proportion h4{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:14px}
 .proportion .bar{height:14px;display:flex;border:1px solid var(--hairline-strong);overflow:hidden}
@@ -154,7 +165,6 @@ a{color:inherit;text-decoration:none}
 .proportion .bar-key .sw{width:14px;height:14px}
 
 /* ========= TYPOGRAPHY ========= */
-.type-header{margin-bottom:48px}
 .type-row{display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:baseline;padding:24px 0;border-bottom:1px solid var(--hairline)}
 .type-row:last-child{border-bottom:none}
 @media (max-width: 800px){ .type-row{grid-template-columns:1fr;gap:8px} }
@@ -177,7 +187,7 @@ a{color:inherit;text-decoration:none}
 .t-mono{font-family:var(--mono);font-weight:400;font-size:13px;line-height:1.5;color:var(--ink-muted)}
 @media (max-width: 700px){ .t-display-xl{font-size:46px;letter-spacing:-1.2px} .t-display-lg{font-size:38px} .t-display-md{font-size:28px} }
 
-/* ========= COMPONENTS / BUTTON CARDS ========= */
+/* ========= COMPONENT CARDS ========= */
 .card-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:20px}
 @media (max-width: 1000px){ .card-grid{grid-template-columns:repeat(2, 1fr)} }
 @media (max-width: 600px){ .card-grid{grid-template-columns:1fr} }
@@ -191,7 +201,7 @@ a{color:inherit;text-decoration:none}
 .field label{font-family:var(--display);font-weight:500;font-size:12px;color:var(--ink-muted);letter-spacing:1px;text-transform:uppercase}
 .field input{background:var(--surface-1);border:1px solid var(--hairline-strong);color:var(--ink);font-family:var(--body);font-size:15px;padding:12px 14px;height:44px;border-radius:var(--r-md);outline:none;transition:all .15s ease;width:100%}
 .field input::placeholder{color:var(--ink-tertiary)}
-.field input:focus,.field.is-focused input{border-color:var(--primary);box-shadow:0 0 0 3px rgba(31,211,224,.30)}
+.field input:focus,.field.is-focused input{border-color:var(--primary);box-shadow:0 0 0 3px color-mix(in srgb, var(--primary) 30%, transparent)}
 .field.is-error input{border-color:var(--error)}
 .field.is-error .help{color:var(--error)}
 .field .help{font-family:var(--body);font-size:12px;color:var(--ink-subtle)}
@@ -201,20 +211,20 @@ a{color:inherit;text-decoration:none}
 .badge.default{background:var(--surface-2);color:var(--ink-muted)}
 .badge.active{background:var(--primary);color:var(--on-primary)}
 .badge.outline{background:transparent;color:var(--primary);border:1px solid var(--primary)}
-.badge.success{background:rgba(46,224,166,.12);color:var(--success);border:1px solid rgba(46,224,166,.4)}
-.badge.warning{background:rgba(244,185,66,.12);color:var(--warning);border:1px solid rgba(244,185,66,.4)}
-.badge.error{background:rgba(255,90,95,.12);color:var(--error);border:1px solid rgba(255,90,95,.4)}
+.badge.success{background:color-mix(in srgb, var(--success) 12%, transparent);color:var(--success);border:1px solid color-mix(in srgb, var(--success) 40%, transparent)}
+.badge.warning{background:color-mix(in srgb, var(--warning) 12%, transparent);color:var(--warning);border:1px solid color-mix(in srgb, var(--warning) 40%, transparent)}
+.badge.error{background:color-mix(in srgb, var(--error) 12%, transparent);color:var(--error);border:1px solid color-mix(in srgb, var(--error) 40%, transparent)}
 
-/* Cards (feature/pricing/testimonial) */
+/* Cards */
 .feat-card{background:var(--surface-1);border:1px solid var(--hairline-strong);border-radius:var(--r-lg);padding:28px;transition:all .2s ease}
-.feat-card:hover{background:var(--surface-2);border-color:rgba(31,211,224,0.4)}
+.feat-card:hover{background:var(--surface-2);border-color:color-mix(in srgb, var(--primary) 40%, transparent)}
 .feat-card .icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid var(--hairline-strong);border-radius:var(--r-md);background:var(--surface-2);color:var(--primary);margin-bottom:16px}
 .feat-card .icon svg{width:20px;height:20px;stroke-width:1.6}
 .feat-card h3{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:.3px;margin-bottom:8px}
 .feat-card p{color:var(--ink-muted);font-size:14px;line-height:1.6}
 
 .price-card{background:var(--surface-1);border:1px solid var(--hairline-strong);border-radius:var(--r-xl);padding:32px;display:flex;flex-direction:column;gap:14px;height:100%}
-.price-card.featured{background:var(--surface-2);border-color:var(--primary);box-shadow:0 0 0 1px rgba(31,211,224,.3), 0 0 28px rgba(31,211,224,.18);position:relative;padding-top:40px;padding-bottom:40px}
+.price-card.featured{background:var(--surface-2);border-color:var(--primary);box-shadow:0 0 0 1px color-mix(in srgb, var(--primary) 30%, transparent), 0 0 28px color-mix(in srgb, var(--primary) 18%, transparent);position:relative;padding-top:40px;padding-bottom:40px}
 .price-card h4{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:.3px}
 .price-card .amt{font-family:var(--display);font-weight:800;font-size:42px;line-height:1;letter-spacing:-1px}
 .price-card .amt small{font-family:var(--body);font-weight:500;font-size:14px;color:var(--ink-muted);letter-spacing:0}
@@ -232,7 +242,7 @@ a{color:inherit;text-decoration:none}
 .testi-card .who .name{font-family:var(--display);font-weight:600;font-size:15px}
 .testi-card .who .role{font-size:12px;color:var(--ink-subtle)}
 
-/* ========= PRODUCT UI (Sequora-specific primitives) ========= */
+/* ========= PRODUCT UI (conditional — adapt or remove per brand category) ========= */
 .ui-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media (max-width: 900px){ .ui-grid{grid-template-columns:1fr} }
 .ui-block{background:var(--surface-1);border:1px solid var(--hairline-strong);border-radius:var(--r-lg);overflow:hidden}
@@ -241,16 +251,17 @@ a{color:inherit;text-decoration:none}
 .ui-block .ph .meta{font-family:var(--mono);font-size:11px;color:var(--ink-subtle)}
 .ui-block .body{padding:18px}
 
-.tl-track{display:flex;align-items:center;gap:14px;padding:9px 12px;background:var(--canvas);border:1px solid var(--hairline);border-radius:var(--r-sm)}
-.tl-track + .tl-track{margin-top:8px}
-.tl-track .tc{font-family:var(--mono);font-size:12px;color:var(--ink-muted);min-width:90px}
-.tl-track .strip{flex:1;height:22px;background:var(--surface-2);border-radius:3px;position:relative;overflow:hidden;border:1px solid var(--hairline)}
-.tl-track .strip .clip{position:absolute;top:3px;bottom:3px;background:linear-gradient(90deg,rgba(31,211,224,.14),rgba(31,211,224,.36));border:1px solid rgba(31,211,224,.5);border-radius:2px}
-.tl-track .strip .ph{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--primary);box-shadow:0 0 10px var(--primary)}
-.tl-track .strip .ph::before{content:"";position:absolute;top:-4px;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--primary)}
+.kpi-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.kpi{background:var(--canvas);border:1px solid var(--hairline);border-radius:var(--r-sm);padding:14px}
+.kpi .lbl{font-family:var(--mono);font-size:11px;color:var(--ink-subtle);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.kpi .val{font-family:var(--display);font-weight:700;font-size:24px;color:var(--ink);letter-spacing:-0.3px}
+.kpi .delta{font-family:var(--mono);font-size:11px;color:var(--success);margin-top:4px}
+.kpi .delta.down{color:var(--error)}
 
-.waveform{height:80px;display:flex;align-items:center;gap:2px;padding:8px;background:var(--canvas);border:1px solid var(--hairline);border-radius:var(--r-md)}
-.waveform .wb{flex:1;background:linear-gradient(to top, var(--primary-active), var(--primary));border-radius:1px;min-height:4px}
+.data-row{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:var(--canvas);border:1px solid var(--hairline);border-radius:var(--r-sm)}
+.data-row + .data-row{margin-top:6px}
+.data-row .name{font-family:var(--body);font-size:13px;color:var(--ink)}
+.data-row .meta{font-family:var(--mono);font-size:12px;color:var(--ink-muted)}
 
 .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
 .toggle-row + .toggle-row{border-top:1px solid var(--hairline)}
@@ -276,11 +287,11 @@ a{color:inherit;text-decoration:none}
 .elev .ds{font-size:12px;color:var(--ink-subtle);margin-top:4px;line-height:1.5}
 .elev-0 .demo{background:var(--canvas);border:1px dashed var(--hairline-strong)}
 .elev-1 .demo{background:var(--surface-1);border:1px solid var(--hairline-strong)}
-.elev-2 .demo{background:var(--surface-2);border:1px solid rgba(31,211,224,.4)}
-.elev-3 .demo{background:var(--surface-1);border:1px solid var(--primary);box-shadow:0 0 24px rgba(31,211,224,.25)}
-.elev-4 .demo{background:var(--surface-1);border:1px solid var(--primary);box-shadow:0 0 0 3px rgba(31,211,224,.30)}
+.elev-2 .demo{background:var(--surface-2);border:1px solid color-mix(in srgb, var(--primary) 40%, transparent)}
+.elev-3 .demo{background:var(--surface-1);border:1px solid var(--primary);box-shadow:0 0 24px color-mix(in srgb, var(--primary) 25%, transparent)}
+.elev-4 .demo{background:var(--surface-1);border:1px solid var(--primary);box-shadow:0 0 0 3px color-mix(in srgb, var(--primary) 30%, transparent)}
 
-/* ========= LAYOUT (radius + spacing) ========= */
+/* ========= LAYOUT ========= */
 .layout-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
 @media (max-width: 900px){ .layout-grid{grid-template-columns:1fr} }
 .radius-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
@@ -323,10 +334,8 @@ a{color:inherit;text-decoration:none}
 .logo-light .lock-tag{color:var(--primary-active)}
 .logo-mono-w{background:var(--canvas)}
 .logo-mono-w .lock-word, .logo-mono-w .lock-tag{color:var(--ink)}
-.logo-mono-w .symbol-stripe{stroke:var(--ink) !important}
 .logo-mono-b{background:var(--ink)}
 .logo-mono-b .lock-word, .logo-mono-b .lock-tag{color:var(--canvas)}
-.logo-mono-b .symbol-stripe{stroke:var(--canvas) !important}
 .lockup{display:flex;align-items:center;gap:18px}
 .lockup .sym{width:52px;height:58px}
 .lockup .text{display:flex;flex-direction:column;gap:4px}
@@ -343,10 +352,11 @@ section[id]{ scroll-margin-top:72px }
 <body>
 
 <!-- ========================= TOP NAV ========================= -->
+<!-- BRAND-SPECIFIC: replace "BRAND NAME" with brand's actual name (uppercase) -->
 <nav class="topnav">
   <div class="topnav-inner">
     <div class="topnav-left">
-      <span class="brand-name">SEQUORA POST PRODUCTION</span>
+      <span class="brand-name">BRAND NAME</span>
       <span class="badge-src">DESIGN.md</span>
     </div>
     <div class="nav-links">
@@ -360,119 +370,114 @@ section[id]{ scroll-margin-top:72px }
   </div>
 </nav>
 
-<!-- ========================= HERO ========================= -->
+<!-- ========================= HERO =========================
+     BRAND-SPECIFIC:
+     - Replace stripe colors with brand voltage (primary + accents)
+     - Replace h1 with brand tagline or "Design system inspiration of [Brand]"
+     - Replace lede with the DESIGN.md `description` paragraph (~3 sentences)
+     - Replace SVG with brand's symbol; if no logo, use wordmark only
+-->
 <section class="hero">
   <div class="container">
     <div class="hero-grid">
       <div>
         <div class="stripes">
-          <span style="background:#0CA8C0"></span>
-          <span style="background:#1FD3E0"></span>
-          <span style="background:#7C8A99"></span>
+          <span style="background:var(--primary-active)"></span>
+          <span style="background:var(--primary)"></span>
+          <span style="background:var(--ink-subtle)"></span>
         </div>
-        <h1>Design system inspiration of Sequora</h1>
-        <p class="lede">A near-black canvas anchored on Graphite Black <span class="mono" style="color:var(--primary)">#0B0F14</span> with Sora Extrabold display headlines in confident negative tracking. Brand voltage is Tech Cyan <span class="mono" style="color:var(--primary)">#1FD3E0</span> applied at 5–10% density on CTAs, focus rings, active toggles, and the timeline playhead.</p>
+        <h1>Design system inspiration of [Brand]</h1>
+        <p class="lede">Replace this paragraph with the brand's description from the DESIGN.md frontmatter — typically a 3-sentence summary covering the canvas, the brand voltage, and the one thing that makes this brand unmistakable. Don't write generic copy here; use the brand's actual voice.</p>
         <div class="cta-row">
-          <button class="btn btn-primary">Discover Sequora</button>
+          <button class="btn btn-primary">Discover [Brand]</button>
           <button class="btn btn-secondary">View DESIGN.md</button>
         </div>
       </div>
       <div class="hero-canvas">
         <div class="stripes top">
-          <span style="background:#0CA8C0"></span>
-          <span style="background:#1FD3E0"></span>
-          <span style="background:#7C8A99"></span>
+          <span style="background:var(--primary-active)"></span>
+          <span style="background:var(--primary)"></span>
+          <span style="background:var(--ink-subtle)"></span>
         </div>
         <div class="ambient"></div>
         <div class="symbol">
-          <svg viewBox="0 0 64 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Sequora">
-            <path d="M32 2 L60 18 L60 54 L32 70 L4 54 L4 18 Z" stroke="#F3F6FA" stroke-width="2.5" fill="none"/>
-            <path d="M14 24 L40 24 L48 32" stroke="#F3F6FA" stroke-width="2.5" stroke-linecap="square" fill="none"/>
-            <path d="M16 30 L42 30" stroke="#1FD3E0" stroke-width="2.2"/>
-            <path d="M22 38 L48 38" stroke="#1FD3E0" stroke-width="2.2"/>
-            <path d="M16 46 L42 46 L24 46" stroke="#F3F6FA" stroke-width="2.5" stroke-linecap="square" fill="none"/>
-            <path d="M50 48 L24 48" stroke="#F3F6FA" stroke-width="2.5"/>
+          <!-- BRAND-SPECIFIC: replace with brand's actual logo SVG -->
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Brand mark">
+            <rect x="6" y="6" width="68" height="68" rx="12" stroke="currentColor" stroke-width="2" style="color:var(--ink)" fill="none"/>
+            <circle cx="40" cy="40" r="14" stroke="var(--primary)" stroke-width="2.5" fill="none"/>
+            <circle cx="40" cy="40" r="4" fill="var(--primary)"/>
           </svg>
         </div>
         <div class="stripes bottom">
-          <span style="background:#0CA8C0"></span>
-          <span style="background:#1FD3E0"></span>
-          <span style="background:#7C8A99"></span>
+          <span style="background:var(--primary-active)"></span>
+          <span style="background:var(--primary)"></span>
+          <span style="background:var(--ink-subtle)"></span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========================= LOGO ========================= -->
+<!-- ========================= 00 LOGO =========================
+     BRAND-SPECIFIC: replace 4 logo variants (dark/light/mono-white/mono-black).
+     If brand has no logo, replace with wordmark-only blocks or skip this section.
+-->
 <section class="section" id="logo">
   <div class="container">
     <div class="sec-num">00 — LOGO LOCKUP</div>
     <h2 class="sec-title">Brand mark · symbol + wordmark</h2>
-    <p class="sec-desc">Symbol-to-wordmark proportion locked at <span class="mono" style="color:var(--primary)">X : 3.2X</span>. Clear-space equals X on every side. Minimum sizes: 20mm print · 120px digital. Dark is the canonical canvas; light, mono-white, mono-black are inverse applications.</p>
+    <p class="sec-desc">Document the brand's logo system here — clear-space rule, minimum sizes, and the four canonical variants (dark, light, monochrome white, monochrome black). Pull these from the brand's identity manual.</p>
 
     <div class="logo-grid">
       <div class="logo-block logo-dark">
         <div class="lockup">
-          <svg class="sym" viewBox="0 0 64 72" fill="none">
-            <path d="M32 2 L60 18 L60 54 L32 70 L4 54 L4 18 Z" stroke="#F3F6FA" stroke-width="3" fill="none"/>
-            <path d="M14 24 L40 24 L48 32" stroke="#F3F6FA" stroke-width="3" stroke-linecap="square" fill="none"/>
-            <path d="M16 30 L42 30" stroke="#1FD3E0" stroke-width="2.5"/>
-            <path d="M22 38 L48 38" stroke="#1FD3E0" stroke-width="2.5"/>
-            <path d="M16 46 L42 46 L24 46" stroke="#F3F6FA" stroke-width="3" stroke-linecap="square" fill="none"/>
-            <path d="M50 48 L24 48" stroke="#F3F6FA" stroke-width="3"/>
+          <svg class="sym" viewBox="0 0 80 80" fill="none">
+            <rect x="6" y="6" width="68" height="68" rx="12" stroke="#F5F5F7" stroke-width="2" fill="none"/>
+            <circle cx="40" cy="40" r="14" stroke="#6CC7FF" stroke-width="2.5" fill="none"/>
+            <circle cx="40" cy="40" r="4" fill="#6CC7FF"/>
           </svg>
           <div class="text">
-            <span class="lock-word">SEQUORA</span>
-            <span class="lock-tag">Post Production</span>
+            <span class="lock-word">BRAND</span>
+            <span class="lock-tag">Tagline</span>
           </div>
         </div>
       </div>
       <div class="logo-block logo-light">
         <div class="lockup">
-          <svg class="sym" viewBox="0 0 64 72" fill="none">
-            <path d="M32 2 L60 18 L60 54 L32 70 L4 54 L4 18 Z" stroke="#0B0F14" stroke-width="3" fill="none"/>
-            <path d="M14 24 L40 24 L48 32" stroke="#0B0F14" stroke-width="3" stroke-linecap="square" fill="none"/>
-            <path d="M16 30 L42 30" stroke="#0CA8C0" stroke-width="2.5"/>
-            <path d="M22 38 L48 38" stroke="#0CA8C0" stroke-width="2.5"/>
-            <path d="M16 46 L42 46 L24 46" stroke="#0B0F14" stroke-width="3" stroke-linecap="square" fill="none"/>
-            <path d="M50 48 L24 48" stroke="#0B0F14" stroke-width="3"/>
+          <svg class="sym" viewBox="0 0 80 80" fill="none">
+            <rect x="6" y="6" width="68" height="68" rx="12" stroke="#0C0D10" stroke-width="2" fill="none"/>
+            <circle cx="40" cy="40" r="14" stroke="#4AB0EC" stroke-width="2.5" fill="none"/>
+            <circle cx="40" cy="40" r="4" fill="#4AB0EC"/>
           </svg>
           <div class="text">
-            <span class="lock-word">SEQUORA</span>
-            <span class="lock-tag">Post Production</span>
+            <span class="lock-word">BRAND</span>
+            <span class="lock-tag">Tagline</span>
           </div>
         </div>
       </div>
       <div class="logo-block logo-mono-w">
         <div class="lockup">
-          <svg class="sym" viewBox="0 0 64 72" fill="none">
-            <path d="M32 2 L60 18 L60 54 L32 70 L4 54 L4 18 Z" stroke="#F3F6FA" stroke-width="3" fill="none"/>
-            <path d="M14 24 L40 24 L48 32" stroke="#F3F6FA" stroke-width="3" stroke-linecap="square" fill="none"/>
-            <path class="symbol-stripe" d="M16 30 L42 30" stroke="#F3F6FA" stroke-width="2.5"/>
-            <path class="symbol-stripe" d="M22 38 L48 38" stroke="#F3F6FA" stroke-width="2.5"/>
-            <path d="M16 46 L42 46 L24 46" stroke="#F3F6FA" stroke-width="3" stroke-linecap="square" fill="none"/>
-            <path d="M50 48 L24 48" stroke="#F3F6FA" stroke-width="3"/>
+          <svg class="sym" viewBox="0 0 80 80" fill="none">
+            <rect x="6" y="6" width="68" height="68" rx="12" stroke="#F5F5F7" stroke-width="2" fill="none"/>
+            <circle cx="40" cy="40" r="14" stroke="#F5F5F7" stroke-width="2.5" fill="none"/>
+            <circle cx="40" cy="40" r="4" fill="#F5F5F7"/>
           </svg>
           <div class="text">
-            <span class="lock-word">SEQUORA</span>
-            <span class="lock-tag">Post Production</span>
+            <span class="lock-word">BRAND</span>
+            <span class="lock-tag">Tagline</span>
           </div>
         </div>
       </div>
       <div class="logo-block logo-mono-b">
         <div class="lockup">
-          <svg class="sym" viewBox="0 0 64 72" fill="none">
-            <path d="M32 2 L60 18 L60 54 L32 70 L4 54 L4 18 Z" stroke="#0B0F14" stroke-width="3" fill="none"/>
-            <path d="M14 24 L40 24 L48 32" stroke="#0B0F14" stroke-width="3" stroke-linecap="square" fill="none"/>
-            <path class="symbol-stripe" d="M16 30 L42 30" stroke="#0B0F14" stroke-width="2.5"/>
-            <path class="symbol-stripe" d="M22 38 L48 38" stroke="#0B0F14" stroke-width="2.5"/>
-            <path d="M16 46 L42 46 L24 46" stroke="#0B0F14" stroke-width="3" stroke-linecap="square" fill="none"/>
-            <path d="M50 48 L24 48" stroke="#0B0F14" stroke-width="3"/>
+          <svg class="sym" viewBox="0 0 80 80" fill="none">
+            <rect x="6" y="6" width="68" height="68" rx="12" stroke="#0C0D10" stroke-width="2" fill="none"/>
+            <circle cx="40" cy="40" r="14" stroke="#0C0D10" stroke-width="2.5" fill="none"/>
+            <circle cx="40" cy="40" r="4" fill="#0C0D10"/>
           </svg>
           <div class="text">
-            <span class="lock-word">SEQUORA</span>
-            <span class="lock-tag">Post Production</span>
+            <span class="lock-word">BRAND</span>
+            <span class="lock-tag">Tagline</span>
           </div>
         </div>
       </div>
@@ -480,292 +485,298 @@ section[id]{ scroll-margin-top:72px }
   </div>
 </section>
 
-<!-- ========================= 01 COLORS ========================= -->
+<!-- ========================= 01 COLORS =========================
+     BRAND-SPECIFIC:
+     - One .swatch block per color in DESIGN.md frontmatter `colors:`
+     - Group by role: Brand voltage / Surface / Text / Borders+Semantic
+     - Update HEX, NAME, role description per swatch
+     - Update proportion bar percentages if brand publishes its own
+-->
 <section class="section" id="colors">
   <div class="container">
     <div class="sec-num">01 — COLOR PALETTE</div>
-    <h2 class="sec-title">Graphite canvas · Cyan voltage</h2>
-    <p class="sec-desc">The system has two surfaces of dark and one chromatic accent. Cyan is the only true brand-identity color signal — it never appears as a section background or a body fill, only on actionable, active, or signal elements (5–10% of any composition).</p>
+    <h2 class="sec-title">Canvas · voltage · ink</h2>
+    <p class="sec-desc">Replace this description with prose adapted from the DESIGN.md Overview — explain what the canvas is, where the voltage appears, and how the brand differs from category peers.</p>
 
-    <!-- BRAND -->
     <div class="color-group">
       <span class="sub-label">Brand voltage (signature)</span>
-      <div class="signature-stripe" title="Deep Cyan → Tech Cyan gradient">
-        <span style="background:#0CA8C0"></span>
-        <span style="background:linear-gradient(90deg,#0CA8C0,#1FD3E0)"></span>
-        <span style="background:#1FD3E0"></span>
+      <div class="signature-stripe">
+        <span style="background:#4AB0EC"></span>
+        <span style="background:linear-gradient(90deg,#4AB0EC,#6CC7FF)"></span>
+        <span style="background:#6CC7FF"></span>
       </div>
       <div class="swatch-grid">
         <div class="swatch">
-          <div class="swatch-color" style="background:#1FD3E0"></div>
+          <div class="swatch-color" style="background:#6CC7FF"></div>
           <div class="swatch-meta">
-            <div class="name">TECH CYAN</div>
-            <div class="hex">#1FD3E0</div>
-            <div class="role">Brand voltage. CTAs, focus rings, active toggles, brand mark accent stripes.</div>
+            <div class="name">PRIMARY</div>
+            <div class="hex">#6CC7FF</div>
+            <div class="role">Brand voltage. CTAs, focus rings, active toggles, brand mark accents.</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#43DBE5"></div>
+          <div class="swatch-color" style="background:#88D2FF"></div>
           <div class="swatch-meta">
-            <div class="name">CYAN HOVER</div>
-            <div class="hex">#43DBE5</div>
-            <div class="role">Hover lift on primary — extends voltage upward toward white.</div>
+            <div class="name">PRIMARY HOVER</div>
+            <div class="hex">#88D2FF</div>
+            <div class="role">Hover lift on primary surfaces.</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#0CA8C0"></div>
+          <div class="swatch-color" style="background:#4AB0EC"></div>
           <div class="swatch-meta">
-            <div class="name">DEEP CYAN</div>
-            <div class="hex">#0CA8C0</div>
-            <div class="role">Pressed/active state. Lower-energy end of the brand gradient.</div>
+            <div class="name">PRIMARY ACTIVE</div>
+            <div class="hex">#4AB0EC</div>
+            <div class="role">Pressed/active state. Lower end of the brand gradient.</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#155F68"></div>
+          <div class="swatch-color" style="background:#1F4258"></div>
           <div class="swatch-meta">
-            <div class="name">CYAN DISABLED</div>
-            <div class="hex">#155F68</div>
-            <div class="role">Disabled CTA — desaturated voltage that signals "not actionable".</div>
+            <div class="name">PRIMARY DISABLED</div>
+            <div class="hex">#1F4258</div>
+            <div class="role">Desaturated voltage that signals "not actionable".</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- SURFACE -->
     <div class="color-group">
       <span class="sub-label">Surface</span>
       <div class="swatch-grid">
         <div class="swatch">
-          <div class="swatch-color" style="background:#0B0F14"></div>
+          <div class="swatch-color" style="background:#0C0D10"></div>
           <div class="swatch-meta">
             <div class="name">CANVAS</div>
-            <div class="hex">#0B0F14</div>
-            <div class="role">Default page floor. 60–70% of any composition. Graphite Black, never #000000.</div>
+            <div class="hex">#0C0D10</div>
+            <div class="role">Default page floor — anchors the entire system.</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#151C24"></div>
+          <div class="swatch-color" style="background:#16181D"></div>
           <div class="swatch-meta">
             <div class="name">SURFACE-1</div>
-            <div class="hex">#151C24</div>
-            <div class="role">One step above canvas. Default cards, panels, side rails.</div>
+            <div class="hex">#16181D</div>
+            <div class="role">One step above canvas. Default cards, panels.</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#1B2530"></div>
+          <div class="swatch-color" style="background:#1C1F26"></div>
           <div class="swatch-meta">
             <div class="name">SURFACE-2</div>
-            <div class="hex">#1B2530</div>
-            <div class="role">Two steps above canvas. Hovered cards, featured pricing, modal contents.</div>
+            <div class="hex">#1C1F26</div>
+            <div class="role">Two steps above canvas. Hovered/featured cards.</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#222D3A"></div>
+          <div class="swatch-color" style="background:#232730"></div>
           <div class="swatch-meta">
             <div class="name">SURFACE-3</div>
-            <div class="hex">#222D3A</div>
-            <div class="role">Raised toolbars and dropdown menus inside product UI.</div>
+            <div class="hex">#232730</div>
+            <div class="role">Raised toolbars, popovers, dropdown menus.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- TEXT -->
     <div class="color-group">
       <span class="sub-label">Text</span>
       <div class="swatch-grid">
         <div class="swatch">
-          <div class="swatch-color" style="background:#F3F6FA"></div>
+          <div class="swatch-color" style="background:#F5F5F7"></div>
           <div class="swatch-meta">
             <div class="name">INK</div>
-            <div class="hex">#F3F6FA</div>
-            <div class="role">Soft White — headlines, primary text, button labels. Never #FFFFFF.</div>
+            <div class="hex">#F5F5F7</div>
+            <div class="role">Headlines and primary text.</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#B5C0CC"></div>
+          <div class="swatch-color" style="background:#B0B3BD"></div>
           <div class="swatch-meta">
             <div class="name">INK MUTED</div>
-            <div class="hex">#B5C0CC</div>
-            <div class="role">Lead paragraphs, descriptive text under headlines.</div>
+            <div class="hex">#B0B3BD</div>
+            <div class="role">Secondary body, lead paragraphs.</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#7C8A99"></div>
+          <div class="swatch-color" style="background:#7A7E8A"></div>
           <div class="swatch-meta">
             <div class="name">INK SUBTLE</div>
-            <div class="hex">#7C8A99</div>
-            <div class="role">Steel Gray — captions, table labels, breadcrumbs, footer links.</div>
+            <div class="hex">#7A7E8A</div>
+            <div class="role">Captions, table labels, breadcrumbs.</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#5A6675"></div>
+          <div class="swatch-color" style="background:#555964"></div>
           <div class="swatch-meta">
             <div class="name">INK TERTIARY</div>
-            <div class="hex">#5A6675</div>
+            <div class="hex">#555964</div>
             <div class="role">Disabled, footnotes, decorative timestamps.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- BORDER + SEMANTIC -->
     <div class="color-group">
       <span class="sub-label">Borders · Semantic</span>
       <div class="swatch-grid cols-5">
         <div class="swatch">
-          <div class="swatch-color" style="background:#1F2A36"></div>
+          <div class="swatch-color" style="background:#20232B"></div>
           <div class="swatch-meta">
             <div class="name">HAIRLINE</div>
-            <div class="hex">#1F2A36</div>
-            <div class="role">1px dividers and section partitions on dark.</div>
+            <div class="hex">#20232B</div>
+            <div class="role">1px dividers and section partitions.</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#2A3744"></div>
+          <div class="swatch-color" style="background:#2A2E38"></div>
           <div class="swatch-meta">
             <div class="name">HAIRLINE STRONG</div>
-            <div class="hex">#2A3744</div>
-            <div class="role">Card outlines, input borders, panel structure.</div>
+            <div class="hex">#2A2E38</div>
+            <div class="role">Card outlines, input borders.</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#2EE0A6"></div>
+          <div class="swatch-color" style="background:#4ADE80"></div>
           <div class="swatch-meta">
             <div class="name">SUCCESS</div>
-            <div class="hex">#2EE0A6</div>
-            <div class="role">Mint-cyan green — render complete, sync OK. Sits next to brand voltage.</div>
+            <div class="hex">#4ADE80</div>
+            <div class="role">Confirmation states, completed actions.</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#F4B942"></div>
+          <div class="swatch-color" style="background:#FBBF24"></div>
           <div class="swatch-meta">
             <div class="name">WARNING</div>
-            <div class="hex">#F4B942</div>
-            <div class="role">Warm amber — only allowed warm hue. Caution, near-quota.</div>
+            <div class="hex">#FBBF24</div>
+            <div class="role">Caution states, near-quota.</div>
           </div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#FF5A5F"></div>
+          <div class="swatch-color" style="background:#F87171"></div>
           <div class="swatch-meta">
             <div class="name">ERROR</div>
-            <div class="hex">#FF5A5F</div>
-            <div class="role">Signal red — destructive, validation failed. Reserved.</div>
+            <div class="hex">#F87171</div>
+            <div class="role">Destructive states, validation failed.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Usage proportion -->
     <div class="proportion">
-      <h4>Official usage proportion</h4>
+      <h4>Usage proportion</h4>
       <div class="bar">
-        <div class="seg" style="background:#0B0F14;width:40%;border-right:1px solid var(--hairline-strong)"></div>
-        <div class="seg" style="background:#151C24;width:25%;border-right:1px solid var(--hairline-strong)"></div>
-        <div class="seg" style="background:#7C8A99;width:25%;border-right:1px solid var(--hairline-strong)"></div>
-        <div class="seg" style="background:linear-gradient(90deg,#0CA8C0,#1FD3E0);width:10%"></div>
+        <div class="seg" style="background:var(--canvas);width:40%;border-right:1px solid var(--hairline-strong)"></div>
+        <div class="seg" style="background:var(--surface-1);width:25%;border-right:1px solid var(--hairline-strong)"></div>
+        <div class="seg" style="background:var(--ink-subtle);width:25%;border-right:1px solid var(--hairline-strong)"></div>
+        <div class="seg" style="background:linear-gradient(90deg,var(--gradient-from),var(--gradient-to));width:10%"></div>
       </div>
       <div class="bar-key">
-        <div class="k"><span class="sw" style="background:#0B0F14;border:1px solid var(--hairline-strong)"></span> Base 60–70%</div>
-        <div class="k"><span class="sw" style="background:#151C24"></span> Surface</div>
-        <div class="k"><span class="sw" style="background:#7C8A99"></span> Support 20–30%</div>
-        <div class="k"><span class="sw" style="background:#1FD3E0"></span> Voltage 5–10%</div>
+        <div class="k"><span class="sw" style="background:var(--canvas);border:1px solid var(--hairline-strong)"></span> Base 60–70%</div>
+        <div class="k"><span class="sw" style="background:var(--surface-1)"></span> Surface</div>
+        <div class="k"><span class="sw" style="background:var(--ink-subtle)"></span> Support 20–30%</div>
+        <div class="k"><span class="sw" style="background:var(--primary)"></span> Voltage 5–10%</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========================= 02 TYPOGRAPHY ========================= -->
+<!-- ========================= 02 TYPOGRAPHY =========================
+     BRAND-SPECIFIC:
+     - One .type-row per role in DESIGN.md `typography:`
+     - Update spec values (size / weight / line-height / letter-spacing)
+     - Replace sample text with brand-appropriate copy
+-->
 <section class="section" id="typography">
   <div class="container">
     <div class="sec-num">02 — TYPOGRAPHY SCALE</div>
-    <h2 class="sec-title">Sora 800 · Inter 400 contrast</h2>
-    <p class="sec-desc">Display in Sora Extrabold (800) with negative tracking. Body in Inter Regular. Eyebrow uppercase with +2.5px tracking — the signature "POST PRODUCTION" treatment. JetBrains Mono only for timecode, paths, code blocks, and any technical readout.</p>
+    <h2 class="sec-title">Display · body · mono</h2>
+    <p class="sec-desc">Document the brand's typographic voice — display family + body family + mono family, the principles that govern hierarchy (e.g. negative tracking on display, uppercase eyebrow with positive tracking), and any non-obvious rules.</p>
 
     <div>
       <div class="type-row">
         <div class="type-meta">
           <div class="role">DISPLAY-XL</div>
-          <div class="spec">Sora · 800<br>72px / 1.0 / -2px</div>
+          <div class="spec">Display · 800<br>72px / 1.0 / -2px</div>
         </div>
-        <div class="type-sample t-display-xl">Tools built for the timeline</div>
+        <div class="type-sample t-display-xl">Hero headline goes here</div>
       </div>
       <div class="type-row">
         <div class="type-meta">
           <div class="role">DISPLAY-LG</div>
-          <div class="spec">Sora · 800<br>56px / 1.05 / -1.5px</div>
+          <div class="spec">Display · 800<br>56px / 1.05 / -1.5px</div>
         </div>
-        <div class="type-sample t-display-lg">Menos fricção. Mais fluxo.</div>
+        <div class="type-sample t-display-lg">Major section opener</div>
       </div>
       <div class="type-row">
         <div class="type-meta">
           <div class="role">DISPLAY-MD · H1</div>
-          <div class="spec">Sora · 800<br>36px / 1.15 / -0.5px</div>
+          <div class="spec">Display · 800<br>36px / 1.15 / -0.5px</div>
         </div>
-        <div class="type-sample t-display-md">Construção da marca</div>
+        <div class="type-sample t-display-md">Page title</div>
       </div>
       <div class="type-row">
         <div class="type-meta">
           <div class="role">DISPLAY-SM</div>
-          <div class="spec">Sora · 700<br>28px / 1.2 / -0.3px</div>
+          <div class="spec">Display · 700<br>28px / 1.2 / -0.3px</div>
         </div>
-        <div class="type-sample t-display-sm">Linguagem visual</div>
+        <div class="type-sample t-display-sm">Sub-section heading</div>
       </div>
       <div class="type-row">
         <div class="type-meta">
           <div class="role">HEADLINE · H2</div>
-          <div class="spec">Sora · 600<br>24px / 1.3 / -0.2px</div>
+          <div class="spec">Display · 600<br>24px / 1.3 / -0.2px</div>
         </div>
-        <div class="type-sample t-headline">Princípios visuais e fluxo</div>
+        <div class="type-sample t-headline">A measured headline</div>
       </div>
       <div class="type-row">
         <div class="type-meta">
           <div class="role">TITLE-MD · H3</div>
-          <div class="spec">Sora · 500<br>18px / 1.4</div>
+          <div class="spec">Display · 500<br>18px / 1.4</div>
         </div>
-        <div class="type-sample t-title-md">Subtítulo de seção ou card</div>
+        <div class="type-sample t-title-md">Card or list title</div>
       </div>
       <div class="type-row">
         <div class="type-meta">
           <div class="role">EYEBROW</div>
-          <div class="spec">Sora · 600<br>13px / 1.4 / +2.5px<br>UPPERCASE</div>
+          <div class="spec">Display · 600<br>13px / 1.4 / +2.5px<br>UPPERCASE</div>
         </div>
-        <div class="type-sample t-eyebrow">Precision tools for post-production</div>
+        <div class="type-sample t-eyebrow">Section taxonomy label</div>
       </div>
       <div class="type-row">
         <div class="type-meta">
           <div class="role">BODY-LG</div>
-          <div class="spec">Inter · 400<br>18px / 1.55</div>
+          <div class="spec">Body · 400<br>18px / 1.55</div>
         </div>
-        <div class="type-sample t-body-lg">Lead paragraph below display headlines. Inter Regular offers comfortable reading and visual neutrality at any size.</div>
+        <div class="type-sample t-body-lg">Lead paragraph below display headlines. Slightly larger and slightly looser than the default body for contextual emphasis.</div>
       </div>
       <div class="type-row">
         <div class="type-meta">
           <div class="role">BODY</div>
-          <div class="spec">Inter · 400<br>16px / 1.5</div>
+          <div class="spec">Body · 400<br>16px / 1.5</div>
         </div>
-        <div class="type-sample t-body">Default body. Sequora develops tools and systems for editors and teams seeking more performance, organization, and fluidity in the post-production flow.</div>
+        <div class="type-sample t-body">Default body. The quick brown fox jumps over the lazy dog. AaBbCcDdEeFfGg 0123456789.</div>
       </div>
       <div class="type-row">
         <div class="type-meta">
           <div class="role">CAPTION</div>
-          <div class="spec">Inter · 500<br>12px / 1.33 / +0.2px</div>
+          <div class="spec">Body · 500<br>12px / 1.33 / +0.2px</div>
         </div>
         <div class="type-sample t-caption" style="color:var(--ink-muted)">Caption / metadata · 2026</div>
       </div>
       <div class="type-row">
         <div class="type-meta">
           <div class="role">BUTTON</div>
-          <div class="spec">Inter · 600<br>14px / 1.2 / +0.3px<br>UPPERCASE</div>
+          <div class="spec">Body · 600<br>14px / 1.2 / +0.3px<br>UPPERCASE</div>
         </div>
-        <div class="type-sample"><span class="t-button" style="display:inline-block;padding:10px 20px;border:1px solid var(--hairline-strong);border-radius:var(--r-md);background:var(--surface-2)">Discover Sequora</span></div>
+        <div class="type-sample"><span class="t-button" style="display:inline-block;padding:10px 20px;border:1px solid var(--hairline-strong);border-radius:var(--r-md);background:var(--surface-2)">Button label</span></div>
       </div>
       <div class="type-row">
         <div class="type-meta">
           <div class="role">MONO</div>
-          <div class="spec">JetBrains Mono · 400<br>13px / 1.5</div>
+          <div class="spec">Mono · 400<br>13px / 1.5</div>
         </div>
-        <div class="type-sample t-mono">01:00:14:23 · /editor/sequora/timeline.js · 4096×2160 @ 23.976</div>
+        <div class="type-sample t-mono">/path/to/file.ext · 2026-01-01 · sha256:f3a…</div>
       </div>
     </div>
   </div>
@@ -775,15 +786,13 @@ section[id]{ scroll-margin-top:72px }
 <section class="section" id="components">
   <div class="container">
     <div class="sec-num">03 — BUTTON VARIANTS</div>
-    <h2 class="sec-title">Rounded silhouettes · uppercase tracking</h2>
-    <p class="sec-desc">All buttons render at <span class="mono" style="color:var(--primary)">rounded.md</span> (8px). Labels uppercase with <span class="mono" style="color:var(--primary)">+1px</span> tracking. The cyan "go" button never appears more than once per visual region — voltage is scarce by definition.</p>
+    <h2 class="sec-title">Primary · secondary · ghost</h2>
+    <p class="sec-desc">Document the brand's button system here. Explain the radius decision (rectangular vs rounded vs pill), uppercase vs sentence case, and where the primary appears (only one accent CTA per visual region, etc.).</p>
 
     <div class="card-grid">
       <div class="spec-card">
         <span class="name">BUTTON-PRIMARY</span>
-        <div class="preview">
-          <button class="btn btn-primary">Discover</button>
-        </div>
+        <div class="preview"><button class="btn btn-primary">Primary action</button></div>
         <div class="meta">primary · on-primary · rounded.md · h 44px</div>
       </div>
       <div class="spec-card">
@@ -797,39 +806,27 @@ section[id]{ scroll-margin-top:72px }
       </div>
       <div class="spec-card">
         <span class="name">BUTTON-SECONDARY</span>
-        <div class="preview">
-          <button class="btn btn-secondary">Configure</button>
-        </div>
+        <div class="preview"><button class="btn btn-secondary">Secondary</button></div>
         <div class="meta">surface-1 · ink · 1px hairline-strong</div>
       </div>
       <div class="spec-card">
         <span class="name">BUTTON-GHOST</span>
-        <div class="preview">
-          <button class="btn btn-ghost">Learn more →</button>
-        </div>
+        <div class="preview"><button class="btn btn-ghost">Tertiary action →</button></div>
         <div class="meta">transparent · ink · no border</div>
       </div>
       <div class="spec-card">
         <span class="name">BUTTON-ICON</span>
         <div class="preview">
-          <button class="btn btn-icon" title="Play">
-            <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M5 3l8 5-8 5V3z"/></svg>
-          </button>
-          <button class="btn btn-icon" title="Settings">
-            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.2"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.5 3.5l1.4 1.4M11.1 11.1l1.4 1.4M3.5 12.5l1.4-1.4M11.1 4.9l1.4-1.4"/></svg>
-          </button>
-          <button class="btn btn-icon" title="Cut">
-            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="4" cy="4" r="2"/><circle cx="4" cy="12" r="2"/><path d="M14 2L6 14M14 14L9 9"/></svg>
-          </button>
+          <button class="btn btn-icon"><svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path d="M5 3l8 5-8 5V3z"/></svg></button>
+          <button class="btn btn-icon"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.2"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2"/></svg></button>
+          <button class="btn btn-icon"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M2 8h12M2 12h12"/></svg></button>
         </div>
-        <div class="meta">40 × 40 · surface-1 · cyan stroke icon</div>
+        <div class="meta">40 × 40 · surface-1 · primary stroke icon</div>
       </div>
       <div class="spec-card">
         <span class="name">TEXT-LINK</span>
-        <div class="preview">
-          <a href="#" style="color:var(--primary);font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase">View all features →</a>
-        </div>
-        <div class="meta">cyan · uppercase · +1px tracking</div>
+        <div class="preview"><a href="#" style="color:var(--primary);font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase">View documentation →</a></div>
+        <div class="meta">primary · uppercase · +1px tracking</div>
       </div>
     </div>
   </div>
@@ -840,15 +837,15 @@ section[id]{ scroll-margin-top:72px }
   <div class="container">
     <div class="sec-num">04 — INPUTS · BADGES</div>
     <h2 class="sec-title">Form controls · status pills</h2>
-    <p class="sec-desc">Inputs lift one surface (<span class="mono" style="color:var(--primary)">surface-1</span>) above canvas with a 1px <span class="mono" style="color:var(--primary)">hairline-strong</span> border. Focus state pairs a 1px cyan border with a 3px outer ring at 30% alpha — the only place glow appears on a control.</p>
+    <p class="sec-desc">Document input states (default / focused / error) and the badge taxonomy. Explain how focus is signaled (cyan ring? underline? border tint?) and which semantic colors are used in badges vs reserved for other surfaces.</p>
 
     <div class="card-grid">
       <div class="spec-card">
         <span class="name">TEXT-INPUT · DEFAULT</span>
         <div class="preview" style="width:100%;flex-direction:column">
           <div class="field" style="width:100%">
-            <label>Project name</label>
-            <input type="text" placeholder="Sequora_v04…">
+            <label>Field label</label>
+            <input type="text" placeholder="Placeholder text…">
           </div>
         </div>
         <div class="meta">surface-1 · ink · rounded.md · h 44px</div>
@@ -858,18 +855,18 @@ section[id]{ scroll-margin-top:72px }
         <div class="preview" style="width:100%;flex-direction:column">
           <div class="field is-focused" style="width:100%">
             <label>Active focus state</label>
-            <input type="text" value="Sequora_v04_final.prproj">
+            <input type="text" value="value entered by user">
           </div>
         </div>
-        <div class="meta">1px cyan border + 3px ring 30% alpha</div>
+        <div class="meta">1px primary border + 3px ring 30% alpha</div>
       </div>
       <div class="spec-card">
         <span class="name">TEXT-INPUT · ERROR</span>
         <div class="preview" style="width:100%;flex-direction:column">
           <div class="field is-error" style="width:100%">
             <label>Validation failed</label>
-            <input type="text" value="quota_exceeded">
-            <span class="help">8K render exceeds plan limit. Upgrade to Pro.</span>
+            <input type="text" value="invalid_value">
+            <span class="help">Helper text describing the error.</span>
           </div>
         </div>
         <div class="meta">1px error border · helper text in error</div>
@@ -877,26 +874,26 @@ section[id]{ scroll-margin-top:72px }
       <div class="spec-card">
         <span class="name">BADGE · ACTIVE</span>
         <div class="preview">
-          <span class="badge active">LIVE</span>
-          <span class="badge default">v04 · final</span>
+          <span class="badge active">ACTIVE</span>
+          <span class="badge default">v1.0</span>
         </div>
         <div class="meta">primary · on-primary · rounded.pill</div>
       </div>
       <div class="spec-card">
         <span class="name">BADGE · OUTLINE</span>
         <div class="preview">
-          <span class="badge outline">Audio</span>
-          <span class="badge outline">Color</span>
-          <span class="badge outline">Editorial</span>
+          <span class="badge outline">Category A</span>
+          <span class="badge outline">Category B</span>
+          <span class="badge outline">Category C</span>
         </div>
-        <div class="meta">transparent · 1px cyan · cyan label</div>
+        <div class="meta">transparent · 1px primary · primary label</div>
       </div>
       <div class="spec-card">
         <span class="name">BADGE · SEMANTIC</span>
         <div class="preview">
-          <span class="badge success">Rendered</span>
-          <span class="badge warning">Near limit</span>
-          <span class="badge error">Sync failed</span>
+          <span class="badge success">Success</span>
+          <span class="badge warning">Warning</span>
+          <span class="badge error">Error</span>
         </div>
         <div class="meta">success · warning · error tokens</div>
       </div>
@@ -904,67 +901,71 @@ section[id]{ scroll-margin-top:72px }
   </div>
 </section>
 
-<!-- ========================= 05 CARDS ========================= -->
+<!-- ========================= 05 CARDS =========================
+     BRAND-SPECIFIC:
+     - Feature cards: one per brand pillar/value (varies per brand)
+     - Pricing: only if applicable to brand category; rename tiers per brand
+     - Testimonial: replace with brand-appropriate quote and author
+-->
 <section class="section">
   <div class="container">
     <div class="sec-num">05 — CARDS</div>
-    <h2 class="sec-title">Surface lift · hairline border · cyan edge</h2>
-    <p class="sec-desc">Hierarchy is built from surface lift (canvas → surface-1 → surface-2) plus 1px hairlines, never from drop shadows. The "featured" tier raises one surface step and adds a cyan edge highlight with a soft outer glow.</p>
+    <h2 class="sec-title">Surface lift · hairline · primary edge</h2>
+    <p class="sec-desc">Hierarchy is built from surface lift (canvas → surface-1 → surface-2) plus 1px hairlines, never from drop shadows. The "featured" tier raises one surface step and adds a primary edge highlight with a soft outer glow.</p>
 
     <span class="sub-label">Feature cards</span>
     <div class="card-grid" style="margin-bottom:48px">
       <div class="feat-card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></div>
-        <h3>Precision</h3>
-        <p>Tools engineered for reliable output, perfect alignment, and detail-level attention across the timeline.</p>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <h3>Pillar one</h3>
+        <p>Replace this with the first brand pillar's name and one-line description from the DESIGN.md.</p>
       </div>
       <div class="feat-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 7h18M3 12h14M3 17h18"/></svg></div>
-        <h3>Fluidity</h3>
-        <p>Tools that keep the creative flow always in motion — transitions, continuity, cadence preserved.</p>
+        <h3>Pillar two</h3>
+        <p>Replace with the second brand pillar — keep the description short and outcome-focused.</p>
       </div>
       <div class="feat-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
-        <h3>Performance</h3>
-        <p>Speed and stability for real workflows — no friction, no waiting, no excuses.</p>
+        <h3>Pillar three</h3>
+        <p>Replace with the third brand pillar. Add more cards (3-up grid wraps to 2-up tablet, 1-up mobile) if the brand has more pillars.</p>
       </div>
     </div>
 
     <span class="sub-label">Pricing — featured tier elevated by surface + edge</span>
     <div class="card-grid" style="grid-template-columns:repeat(3,1fr);align-items:start;margin-bottom:48px">
       <div class="price-card">
-        <span class="t-eyebrow" style="color:var(--ink-subtle)">Studio</span>
-        <h4>Editor Solo</h4>
-        <div class="amt">$12<small>/mo</small></div>
+        <span class="t-eyebrow" style="color:var(--ink-subtle)">Tier A</span>
+        <h4>Starter</h4>
+        <div class="amt">$0<small>/mo</small></div>
         <ul>
-          <li>1 active timeline</li>
-          <li>Export up to 4K</li>
-          <li>Basic cloud sync</li>
+          <li>Feature one</li>
+          <li>Feature two</li>
+          <li>Feature three</li>
         </ul>
         <button class="btn btn-secondary" style="margin-top:auto">Choose</button>
       </div>
       <div class="price-card featured">
         <span class="featured-tag">Most popular</span>
-        <span class="t-eyebrow">Studio Pro</span>
-        <h4>Small Team</h4>
-        <div class="amt">$48<small>/mo</small></div>
+        <span class="t-eyebrow">Tier B</span>
+        <h4>Pro</h4>
+        <div class="amt">$00<small>/mo</small></div>
         <ul>
-          <li>Unlimited timelines</li>
-          <li>Export up to 8K + ProRes</li>
-          <li>Real-time sync</li>
-          <li>Smart proxy intelligence</li>
+          <li>Everything in Starter</li>
+          <li>Pro feature one</li>
+          <li>Pro feature two</li>
+          <li>Pro feature three</li>
         </ul>
         <button class="btn btn-primary" style="margin-top:auto">Choose Pro</button>
       </div>
       <div class="price-card">
-        <span class="t-eyebrow" style="color:var(--ink-subtle)">Enterprise</span>
-        <h4>Full Studio</h4>
+        <span class="t-eyebrow" style="color:var(--ink-subtle)">Tier C</span>
+        <h4>Enterprise</h4>
         <div class="amt">Custom</div>
         <ul>
           <li>Everything in Pro</li>
           <li>SSO + audit log</li>
-          <li>Dedicated server</li>
-          <li>White-glove onboarding</li>
+          <li>Dedicated support</li>
         </ul>
         <button class="btn btn-secondary" style="margin-top:auto">Talk to sales</button>
       </div>
@@ -972,87 +973,88 @@ section[id]{ scroll-margin-top:72px }
 
     <span class="sub-label">Testimonial</span>
     <div class="testi-card" style="max-width:720px">
-      <p class="quote">A Sequora limpou o caminho entre o material bruto e a história final. Cortei dois dias do nosso workflow só na primeira semana — e nunca mais perdi uma marker entre versões.</p>
+      <p class="quote">Replace this quote with brand-appropriate testimonial copy. Keep it specific and outcome-oriented — generic praise like "great product" doesn't sell the brand.</p>
       <div class="author">
-        <div class="av">MR</div>
+        <div class="av">AB</div>
         <div class="who">
-          <div class="name">Marina Rocha</div>
-          <div class="role">Senior Editor · Estúdio Volta</div>
+          <div class="name">Author Name</div>
+          <div class="role">Role · Company</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========================= 06 PRODUCT UI ========================= -->
+<!-- ========================= 06 PRODUCT UI (CONDITIONAL) =========================
+     BRAND-SPECIFIC:
+     This section is conditional on brand category.
+     - Software/tools brands: keep with brand-relevant primitives
+       (e.g. dashboard, kanban, code editor, analytics widgets)
+     - Editorial/lifestyle/automotive brands: replace with brand-relevant primitives
+       (article cards, configurator, lookbook frame)
+     - No suitable primitive: REMOVE this entire section and the nav link
+-->
 <section class="section" id="product-ui">
   <div class="container">
     <div class="sec-num">06 — PRODUCT UI PRIMITIVES</div>
-    <h2 class="sec-title">Timeline · waveform · panels</h2>
-    <p class="sec-desc">Sequora is a tools company — these primitives are where the brand spends most of its time. Timecode in JetBrains Mono. Playhead in Tech Cyan. Waveform bars rendered as a Deep Cyan → Tech Cyan vertical gradient driven by amplitude.</p>
+    <h2 class="sec-title">In-app surfaces</h2>
+    <p class="sec-desc">Document the brand's product UI primitives. The examples below are generic dashboard primitives — replace with whatever is most relevant to the brand category, or remove the section entirely if not applicable.</p>
 
     <div class="ui-grid">
-      <!-- Timeline -->
       <div class="ui-block">
         <div class="ph">
-          <span class="title">Timeline</span>
-          <span class="meta">23.976 fps · 4K UHD</span>
+          <span class="title">Overview</span>
+          <span class="meta">last 30 days</span>
         </div>
         <div class="body">
-          <div class="tl-track">
-            <span class="tc">01:00:14:23</span>
-            <div class="strip"><div class="clip" style="left:6%;width:62%"></div><div class="ph" style="left:42%"></div></div>
-          </div>
-          <div class="tl-track">
-            <span class="tc">01:00:18:02</span>
-            <div class="strip"><div class="clip" style="left:28%;width:48%"></div><div class="ph" style="left:36%"></div></div>
-          </div>
-          <div class="tl-track">
-            <span class="tc">01:00:22:11</span>
-            <div class="strip"><div class="clip" style="left:8%;width:34%"></div><div class="ph" style="left:18%"></div></div>
+          <div class="kpi-row">
+            <div class="kpi"><div class="lbl">Metric A</div><div class="val">12,480</div><div class="delta">+12.4%</div></div>
+            <div class="kpi"><div class="lbl">Metric B</div><div class="val">98.2%</div><div class="delta">+0.8%</div></div>
+            <div class="kpi" style="margin-top:12px"><div class="lbl">Metric C</div><div class="val">$48k</div><div class="delta down">−2.1%</div></div>
+            <div class="kpi" style="margin-top:12px"><div class="lbl">Metric D</div><div class="val">3.42s</div><div class="delta">+5.0%</div></div>
           </div>
         </div>
       </div>
 
-      <!-- Waveform -->
       <div class="ui-block">
         <div class="ph">
-          <span class="title">Waveform</span>
-          <span class="meta">stereo · -3.2 dB</span>
+          <span class="title">Recent activity</span>
+          <span class="meta">live</span>
         </div>
         <div class="body">
-          <div class="waveform" id="wf"></div>
+          <div class="data-row"><span class="name">Item one</span><span class="meta">2m ago</span></div>
+          <div class="data-row"><span class="name">Item two</span><span class="meta">14m ago</span></div>
+          <div class="data-row"><span class="name">Item three</span><span class="meta">1h ago</span></div>
+          <div class="data-row"><span class="name">Item four</span><span class="meta">3h ago</span></div>
         </div>
       </div>
 
-      <!-- Toggles -->
       <div class="ui-block">
         <div class="ph">
-          <span class="title">Render Settings</span>
-          <span class="meta">v04.final</span>
+          <span class="title">Settings</span>
+          <span class="meta">v1.0</span>
         </div>
         <div class="body">
-          <div class="toggle-row"><div class="lbl">Auto-proxy<small>Background generation</small></div><div class="tgl on" onclick="this.classList.toggle('on')"></div></div>
-          <div class="toggle-row"><div class="lbl">Color match<small>Sync LUTs across clips</small></div><div class="tgl on" onclick="this.classList.toggle('on')"></div></div>
-          <div class="toggle-row"><div class="lbl">Audio normalize<small>Target -16 LUFS</small></div><div class="tgl" onclick="this.classList.toggle('on')"></div></div>
-          <div class="toggle-row"><div class="lbl">Burn-in timecode<small>For external review</small></div><div class="tgl" onclick="this.classList.toggle('on')"></div></div>
+          <div class="toggle-row"><div class="lbl">Setting one<small>Description of what this setting does</small></div><div class="tgl on" onclick="this.classList.toggle('on')"></div></div>
+          <div class="toggle-row"><div class="lbl">Setting two<small>Another setting description</small></div><div class="tgl on" onclick="this.classList.toggle('on')"></div></div>
+          <div class="toggle-row"><div class="lbl">Setting three<small>Off by default</small></div><div class="tgl" onclick="this.classList.toggle('on')"></div></div>
+          <div class="toggle-row"><div class="lbl">Setting four<small>Off by default</small></div><div class="tgl" onclick="this.classList.toggle('on')"></div></div>
         </div>
       </div>
 
-      <!-- Inspector -->
       <div class="ui-block">
         <div class="ph">
           <span class="title">Inspector</span>
-          <span class="meta">node 04</span>
+          <span class="meta">item 04</span>
         </div>
         <div class="body">
           <div class="kv">
-            <div><span class="k">in →</span> 01:00:14:23</div>
-            <div><span class="k">out →</span> 01:00:42:08</div>
-            <div><span class="k">dur →</span> <span class="hi">00:00:27:09</span></div>
-            <div><span class="k">res →</span> 4096 × 2160</div>
-            <div><span class="k">codec →</span> ProRes 422 HQ</div>
-            <div><span class="k">path →</span> /vol/sequora/proj_a/v04.mov</div>
+            <div><span class="k">id →</span> 8a3f2c1d</div>
+            <div><span class="k">type →</span> example</div>
+            <div><span class="k">status →</span> <span class="hi">active</span></div>
+            <div><span class="k">size →</span> 4.2 MB</div>
+            <div><span class="k">created →</span> 2026-01-01</div>
+            <div><span class="k">path →</span> /vol/example/item.ext</div>
           </div>
         </div>
       </div>
@@ -1065,14 +1067,14 @@ section[id]{ scroll-margin-top:72px }
   <div class="container">
     <div class="sec-num">07 — ELEVATION & DEPTH</div>
     <h2 class="sec-title">Depth from surface — not shadow</h2>
-    <p class="sec-desc">Five levels. None use neutral gray drop shadows. Level 3 is the "spotlight" — a 1px cyan border with a soft outer glow, reserved for featured/active states. Level 4 is the focus ring (3px outer cyan ring at 30% alpha).</p>
+    <p class="sec-desc">Five levels. None use neutral gray drop shadows. Level 3 is the "spotlight" — a 1px primary border with a soft outer glow, reserved for featured/active states. Level 4 is the focus ring (3px outer primary ring at 30% alpha).</p>
 
     <div class="elev-grid">
       <div class="elev elev-0"><div class="demo">CANVAS</div><div class="lvl">level 0</div><div class="nm">Flat</div><div class="ds">No border, no shadow</div></div>
       <div class="elev elev-1"><div class="demo">SURFACE-1</div><div class="lvl">level 1</div><div class="nm">Surface lift</div><div class="ds">Default cards + hairline</div></div>
-      <div class="elev elev-2"><div class="demo">SURFACE-2</div><div class="lvl">level 2</div><div class="nm">Hover lift</div><div class="ds">Border tints cyan 30%</div></div>
-      <div class="elev elev-3"><div class="demo">CYAN GLOW</div><div class="lvl">level 3</div><div class="nm">Spotlight</div><div class="ds">Cyan border + outer glow</div></div>
-      <div class="elev elev-4"><div class="demo">FOCUS RING</div><div class="lvl">level 4</div><div class="nm">Focus</div><div class="ds">3px ring cyan 30%</div></div>
+      <div class="elev elev-2"><div class="demo">SURFACE-2</div><div class="lvl">level 2</div><div class="nm">Hover lift</div><div class="ds">Border tints primary 30%</div></div>
+      <div class="elev elev-3"><div class="demo">PRIMARY GLOW</div><div class="lvl">level 3</div><div class="nm">Spotlight</div><div class="ds">Primary border + outer glow</div></div>
+      <div class="elev elev-4"><div class="demo">FOCUS RING</div><div class="lvl">level 4</div><div class="nm">Focus</div><div class="ds">3px ring primary 30%</div></div>
     </div>
   </div>
 </section>
@@ -1082,7 +1084,7 @@ section[id]{ scroll-margin-top:72px }
   <div class="container">
     <div class="sec-num">08 — SHAPES & SPACING</div>
     <h2 class="sec-title">Border radius · spacing scale</h2>
-    <p class="sec-desc">The system caps at 16px on rectangular surfaces — Sequora is precise, not playful. Pill is reserved for toggles and status indicators. Spacing follows a 4px base; section rhythm is 96px on marketing surface, 128px on hero.</p>
+    <p class="sec-desc">Document the brand's radius philosophy (rectangular = engineered; rounded = friendly; pill = playful) and the spacing base unit. Section rhythm is typically 96px on marketing surface; the hero often opens at 128px.</p>
 
     <div class="layout-grid">
       <div>
@@ -1116,37 +1118,35 @@ section[id]{ scroll-margin-top:72px }
   </div>
 </section>
 
-<!-- ========================= 09 DO / DON'T ========================= -->
+<!-- ========================= 09 DO / DON'T =========================
+     BRAND-SPECIFIC: pull each <li> directly from the DESIGN.md `Do's and Don'ts` prose.
+     Bold the leading clause with <b>; wrap token references in <code>.
+-->
 <section class="section" id="dodont">
   <div class="container">
     <div class="sec-num">09 — DIRECTIVES</div>
     <h2 class="sec-title">Do's and don'ts</h2>
-    <p class="sec-desc">The Don'ts encode the negative space of the brand — they tell an agent what NOT to default to.</p>
+    <p class="sec-desc">The Don'ts encode the negative space of the brand — they tell an agent what NOT to default to. Each rule should be concrete (name a specific value or pattern), anti-default (oppose a generic AI tendency), and reasoned (imply WHY).</p>
 
     <div class="dodont">
       <div class="col do">
         <h3><span class="icon">✓</span> DO</h3>
         <ul>
-          <li><b>Canvas is Graphite Black <code>#0B0F14</code></b> — near-black with a graphite tint, never pure black.</li>
-          <li><b>Reserve Tech Cyan for primary CTAs, focus rings, active toggles, brand mark, timeline playhead.</b> Aim for 5–10% density.</li>
-          <li><b>Sora Extrabold (800) with negative tracking</b> on hero headlines. Eyebrow uses uppercase + <code>+2.5px</code> tracking.</li>
-          <li><b>Build depth with surface lift and 1px hairlines</b> — step from canvas → surface-1 → surface-2.</li>
-          <li><b>Mono only for technical readouts</b> — timecode, paths, file sizes, frame counts.</li>
-          <li><b>Use the official cyan gradient</b> (Deep Cyan → Tech Cyan) for glows, motion lines, waveforms — always linear.</li>
-          <li><b>Maintain logo clear-space of X</b> on every side; minimum sizes 20mm print / 120px digital.</li>
+          <li><b>Replace with first brand "do" rule.</b> Pull from DESIGN.md prose; keep the bold leading clause.</li>
+          <li><b>Replace with second rule.</b> Concrete, specific, with token references where helpful: <code>{colors.primary}</code>.</li>
+          <li><b>Replace with third rule.</b> About canvas anchoring, voltage usage, or typographic non-negotiables.</li>
+          <li><b>Replace with fourth rule.</b> About surface ladder, depth construction, or visual rhythm.</li>
+          <li><b>Replace with fifth rule.</b> About when and where the primary appears.</li>
         </ul>
       </div>
       <div class="col dont">
         <h3><span class="icon">✕</span> DON'T</h3>
         <ul>
-          <li><b>Don't use pure <code>#000000</code> as canvas.</b> The graphite-blue cast is intentional and prevents harshness.</li>
-          <li><b>Don't introduce a second chromatic accent</b> — no purple, pink, orange, green-as-decoration.</li>
-          <li><b>Don't paint cyan on body text, large fills, or section backgrounds.</b> Cyan is signal light, not wallpaper.</li>
-          <li><b>Don't pill-round primary CTAs.</b> Buttons stay <code>rounded.md</code> 8px. Pill is for toggles and status.</li>
-          <li><b>Don't apply neutral gray drop shadows.</b> Depth is surface + hairline + selective cyan glow.</li>
-          <li><b>Don't put white text on Tech Cyan.</b> The only ink on cyan is on-primary <code>#0B0F14</code>.</li>
-          <li><b>Don't use Sora for body text.</b> Below headline (24px), always Inter.</li>
-          <li><b>Don't ship light-mode marketing as default.</b> Light is inverse application — print, monochrome.</li>
+          <li><b>Replace with first brand "don't".</b> Specific anti-pattern (e.g. don't use <code>#000000</code> when canvas is tinted near-black).</li>
+          <li><b>Replace with second.</b> Anti-default — what generic AI output would do that this brand explicitly rejects.</li>
+          <li><b>Replace with third.</b> Often: don't introduce a second chromatic accent.</li>
+          <li><b>Replace with fourth.</b> About forbidden shapes (e.g. don't pill-round CTAs).</li>
+          <li><b>Replace with fifth.</b> About forbidden depth treatment (e.g. no neutral gray drop shadows).</li>
         </ul>
       </div>
     </div>
@@ -1157,29 +1157,11 @@ section[id]{ scroll-margin-top:72px }
 <footer class="site-footer">
   <div class="container">
     <div class="row">
-      <span>© 2026 SEQUORA POST PRODUCTION · BRAND DESIGN SYSTEM</span>
-      <span>Generated from DESIGN.md · v alpha · 01:00:14:23</span>
+      <span>© 2026 BRAND NAME · BRAND DESIGN SYSTEM</span>
+      <span>Generated from DESIGN.md · v alpha</span>
     </div>
   </div>
 </footer>
-
-<script>
-// Procedural waveform
-(function(){
-  var w = document.getElementById('wf');
-  if(!w) return;
-  var n = 50, seed = 7, html = '';
-  function rand(){ seed = (seed*9301 + 49297) % 233280; return seed/233280; }
-  for (var i = 0; i < n; i++){
-    var t = i/(n-1);
-    var envelope = Math.sin(t*Math.PI);
-    var noise = 0.4 + rand()*0.6;
-    var h = Math.max(8, envelope * noise * 80);
-    html += '<div class="wb" style="height:'+h+'%"></div>';
-  }
-  w.innerHTML = html;
-})();
-</script>
 
 </body>
 </html>
